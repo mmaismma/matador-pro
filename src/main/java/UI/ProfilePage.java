@@ -190,6 +190,11 @@ public class ProfilePage extends javax.swing.JFrame {
 
         jButton6.setFont(new java.awt.Font("Segoe Script", 1, 14)); // NOI18N
         jButton6.setText("Edit");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -330,7 +335,7 @@ public class ProfilePage extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\rockm\\OneDrive\\Desktop\\Java Project\\June-national-safety-transit-bus.jpg")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 600));
 
-        setSize(new java.awt.Dimension(1014, 625));
+        setSize(new java.awt.Dimension(1014, 610));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -346,6 +351,10 @@ public class ProfilePage extends javax.swing.JFrame {
         SwingUtilities.invokeLater(() -> new BusSearch().setVisible(true));
         dispose();
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
