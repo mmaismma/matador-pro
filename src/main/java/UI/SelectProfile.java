@@ -144,7 +144,7 @@ public class SelectProfile extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 540, 140));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\rockm\\OneDrive\\Desktop\\Java Project\\bgimage.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/bgimage.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 640));
 
         setSize(new java.awt.Dimension(812, 647));
@@ -156,7 +156,8 @@ public class SelectProfile extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBox2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        SwingUtilities.invokeLater(() -> new LoginPage().setVisible(true));
+        SwingUtilities.invokeLater(() -> new SignInPage().setVisible(true));
+        dispose();
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
