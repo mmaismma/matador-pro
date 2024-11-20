@@ -24,11 +24,11 @@ public class LandingPage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Landing page");
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0,80));
 
-        jButton1.setBackground(new java.awt.Color(115, 109, 109));
         jButton1.setFont(new java.awt.Font("Segoe UI Historic", 2, 12)); // NOI18N
         jButton1.setText("REGISTRATION / SIGN IN");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
