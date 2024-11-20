@@ -133,7 +133,7 @@ public class SearchingBus extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 860, 100));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/BusSearchBG.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BusSearchBG.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 500));
 
         setSize(new java.awt.Dimension(1014, 507));

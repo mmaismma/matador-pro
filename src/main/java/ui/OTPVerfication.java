@@ -82,7 +82,7 @@ public class OTPVerfication extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, 390, 340));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/signin bg.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/signin bg.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 840, 360));
 
         setSize(new java.awt.Dimension(1048, 534));

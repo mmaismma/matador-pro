@@ -145,7 +145,7 @@ public class LandingPage extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 710, 220));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Moraine-Lake-bus-route-Nick-Fizhardinge-2020-Low-Res-5.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Moraine-Lake-bus-route-Nick-Fizhardinge-2020-Low-Res-5.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 800));
 
         setSize(new java.awt.Dimension(1214, 807));
@@ -156,7 +156,6 @@ public class LandingPage extends javax.swing.JFrame {
         javax.swing.SwingUtilities.invokeLater(() -> new SelectProfile().setVisible(true));
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

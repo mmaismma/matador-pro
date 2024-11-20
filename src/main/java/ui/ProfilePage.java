@@ -314,7 +314,7 @@ public class ProfilePage extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 980, 100));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/June-national-safety-transit-bus.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/June-national-safety-transit-bus.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 600));
 
         setSize(new java.awt.Dimension(1014, 610));
@@ -330,7 +330,7 @@ public class ProfilePage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-//        javax.swing.SwingUtilities.invokeLater(() -> new BusSearch().setVisible(true));
+        // TODO javax.swing.SwingUtilities.invokeLater(() -> new BusSearch().setVisible(true));
         dispose();
     }//GEN-LAST:event_jButton7ActionPerformed
 

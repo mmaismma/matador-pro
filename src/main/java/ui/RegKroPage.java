@@ -5,7 +5,7 @@ public class RegKroPage extends javax.swing.JFrame {
     public RegKroPage() {
         initComponents();
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -170,7 +170,7 @@ public class RegKroPage extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 970, 520));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/RegPlease.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RegPlease.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 1090, 600));
 
         setSize(new java.awt.Dimension(1161, 646));

@@ -126,7 +126,7 @@ public class SelectProfile extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 540, 140));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/bgimage.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bgimage.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 640));
 
         setSize(new java.awt.Dimension(812, 647));
