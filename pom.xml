@@ -12,7 +12,12 @@
             <version>RELEASE230</version>
             <type>jar</type>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+        <!-- https://mvnrepository.com/artifact/com.toedter/jcalendar -->
+        <dependency>
+            <groupId>com.toedter</groupId>
+            <artifactId>jcalendar</artifactId>
+            <version>1.4</version>
+        </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
