@@ -182,7 +182,8 @@ public class CompletedTrips extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+    RideReview rideReviewPage = new RideReview();
+    rideReviewPage.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
