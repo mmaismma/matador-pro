@@ -2,7 +2,10 @@ package ui;
 
 public class SignInPage extends javax.swing.JFrame {
 
-    public SignInPage() {
+    private javax.swing.JFrame prevFrame;
+
+    public SignInPage(javax.swing.JFrame prevFrame) {
+        this.prevFrame = prevFrame;
         initComponents();
     }
 
@@ -10,6 +13,7 @@ public class SignInPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        backButton = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -24,6 +28,15 @@ public class SignInPage extends javax.swing.JFrame {
         setTitle("Sign In");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        backButton.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        backButton.setText("← BACK");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0,80));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -95,7 +108,7 @@ public class SignInPage extends javax.swing.JFrame {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jButton2))
@@ -112,16 +125,22 @@ public class SignInPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        javax.swing.SwingUtilities.invokeLater(() -> new OTPVerfication().setVisible(true));
-        this.dispose();
+        javax.swing.SwingUtilities.invokeLater(() -> new OTPVerfication(this).setVisible(true));
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        javax.swing.SwingUtilities.invokeLater(() -> new RegKroPage().setVisible(true));
-        this.dispose();
+        javax.swing.SwingUtilities.invokeLater(() -> new RegKroPage(this).setVisible(true));
+        this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        this.dispose();
+        this.prevFrame.setVisible(true);
+    }//GEN-LAST:event_backButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

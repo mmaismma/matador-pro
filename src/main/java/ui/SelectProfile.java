@@ -2,7 +2,10 @@ package ui;
 
 public class SelectProfile extends javax.swing.JFrame {
 
-    public SelectProfile() {
+    private javax.swing.JFrame prevFrame;
+
+    public SelectProfile(javax.swing.JFrame prevFrame) {
+        this.prevFrame = prevFrame;
         initComponents();
     }
 
@@ -10,6 +13,7 @@ public class SelectProfile extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        backButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
@@ -23,6 +27,15 @@ public class SelectProfile extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        backButton.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        backButton.setText("← BACK");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0,80));
 
@@ -139,11 +152,17 @@ public class SelectProfile extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBox2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        javax.swing.SwingUtilities.invokeLater(() -> new SignInPage().setVisible(true));
-        this.dispose();
+        javax.swing.SwingUtilities.invokeLater(() -> new SignInPage(this).setVisible(true));
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        this.dispose();
+        this.prevFrame.setVisible(true);
+    }//GEN-LAST:event_backButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;

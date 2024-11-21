@@ -223,6 +223,11 @@ public class ProfilePage extends javax.swing.JFrame {
 
         jButton5.setFont(new java.awt.Font("Segoe Script", 0, 12)); // NOI18N
         jButton5.setText("SIGN OUT");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton7.setFont(new java.awt.Font("Segoe Script", 0, 12)); // NOI18N
         jButton7.setText("BOOK A TRIP");
@@ -320,24 +325,29 @@ public class ProfilePage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        javax.swing.SwingUtilities.invokeLater(() -> new CompletedTrips().setVisible(true));
-        this.dispose();
+        javax.swing.SwingUtilities.invokeLater(() -> new CompletedTrips(this).setVisible(true));
+        this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        javax.swing.SwingUtilities.invokeLater(() -> new SearchingBus().setVisible(true));
-        dispose();
+        javax.swing.SwingUtilities.invokeLater(() -> new SearchingBus(this).setVisible(true));
+        this.setVisible(false);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        javax.swing.SwingUtilities.invokeLater(() -> new EditProfile().setVisible(true));
-        dispose();
+        javax.swing.SwingUtilities.invokeLater(() -> new EditProfile(this).setVisible(true));
+        this.setVisible(false);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        javax.swing.SwingUtilities.invokeLater(() -> new UpcommingTrips().setVisible(true));
-        this.dispose();
+        javax.swing.SwingUtilities.invokeLater(() -> new UpcommingTrips(this).setVisible(true));
+        this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        javax.swing.SwingUtilities.invokeLater(() -> new LandingPage().setVisible(true));
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
