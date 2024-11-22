@@ -1,6 +1,6 @@
 package services;
 
-public class Api implements Login, Register, EditProfile {
+public class Api {
 
     public static boolean register(lib.UserDetails userDetails) throws Exception {
         services.SQLConnector x = new services.SQLConnector();
@@ -104,8 +104,6 @@ public class Api implements Login, Register, EditProfile {
         }
         return true;
     }
-
-    ;
 
     public static lib.UserDetails getUserDetails(String mobile) throws Exception {
         services.SQLConnector x = new services.SQLConnector();
