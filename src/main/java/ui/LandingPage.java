@@ -4,6 +4,8 @@ public class LandingPage extends javax.swing.JFrame {
 
     public LandingPage() {
         initComponents();
+//        services.SQLConnector x = new services.SQLConnector();
+//        System.out.println(x.conn);
     }
 
     @SuppressWarnings("unchecked")
