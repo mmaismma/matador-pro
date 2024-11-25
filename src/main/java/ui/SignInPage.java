@@ -130,7 +130,7 @@ public class SignInPage extends javax.swing.JFrame {
             try {
                 if (services.Api.login(this.mobileTF.getText(), "" + otp)) {
                     javax.swing.JOptionPane.showMessageDialog(null, "Login successful!");;
-                    app.State.userDetails = services.Api.getUserDetails(this.mobileTF.getText());
+                    app.State.userDetails = services.Api.getUserDetails(this.mobileTF.getText(), "" + otp);
                     this.dispose();
                     javax.swing.SwingUtilities.invokeLater(() -> new ProfilePage().setVisible(true));;
                 } else {
