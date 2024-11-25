@@ -225,17 +225,18 @@ public class RegKroPage extends javax.swing.JFrame {
                                 otp + "",
                                 ""
                         ))) {
-                            javax.swing.JOptionPane.showConfirmDialog(null, "User created successfully");
+                            javax.swing.JOptionPane.showMessageDialog(null, "User created successfully");
+                            app.State.userDetails = services.Api.getUserDetails(mobileTF.getText(), "" + otp);
                             this.dispose();
                             javax.swing.SwingUtilities.invokeLater(() -> new ProfilePage().setVisible(true));
                         } else {
-                            javax.swing.JOptionPane.showConfirmDialog(null, "Error registering user!");
+                            javax.swing.JOptionPane.showMessageDialog(null, "Error registering user!");
 
                         }
                     } catch (Exception err) {
-                        javax.swing.JOptionPane.showConfirmDialog(null, "Error registering user!" + err);
+                        javax.swing.JOptionPane.showMessageDialog(null, "Error registering user!" + err);
                     }
-                }, this)
+        })
         );
     }//GEN-LAST:event_getOTPButtonActionPerformed
 

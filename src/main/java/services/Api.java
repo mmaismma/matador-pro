@@ -14,7 +14,7 @@ public class Api {
         return GetUserDetails.getUserDetails(mobile, otp);
     }
 
-    public static boolean editProfile(lib.UserDetails userDetails) throws Exception {
-        return EditProfile.editProfile(userDetails);
+    public static boolean editProfile(lib.UserDetails userDetails, String mobile, String otp) throws Exception {
+        return EditProfile.editProfile(userDetails, mobile, otp);
     }
 }

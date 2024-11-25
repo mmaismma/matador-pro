@@ -8,7 +8,7 @@ public class Login {
         try {
             java.sql.ResultSet r = x.conn.createStatement()
                     .executeQuery("SELECT * FROM users where mobile = '"
-                            + mobile + "' AND otp ='" + otp + "';");
+                            + mobile + "' AND otp = '" + otp + "';");
             if (r.next()) {
                 return true;
             }

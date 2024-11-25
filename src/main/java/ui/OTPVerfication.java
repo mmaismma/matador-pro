@@ -2,11 +2,9 @@ package ui;
 
 public class OTPVerfication extends javax.swing.JFrame {
 
-    private javax.swing.JFrame prevFrame;
     java.util.function.Consumer<Integer> callback;
 
-    public OTPVerfication(java.util.function.Consumer<Integer> callback, javax.swing.JFrame prevFrame) {
-        this.prevFrame = prevFrame;
+    public OTPVerfication(java.util.function.Consumer<Integer> callback) {
         this.callback = callback;
         this.setVisible(true);
         initComponents();
@@ -108,13 +106,11 @@ public class OTPVerfication extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.dispose();
-        this.callback.accept(Integer.parseInt(this.otpTF.getText()));
-//        javax.swing.SwingUtilities.invokeLater(() -> new ProfilePage().setVisible(true));
+        this.callback.accept(Integer.valueOf(this.otpTF.getText()));
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         this.dispose();
-        this.prevFrame.setVisible(true);
     }//GEN-LAST:event_backButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

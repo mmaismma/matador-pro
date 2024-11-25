@@ -2,10 +2,10 @@ package services;
 
 public class EditProfile {
 
-    static boolean editProfile(lib.UserDetails userDetails) throws Exception {
+    static boolean editProfile(lib.UserDetails userDetails, String mobile, String otp) throws Exception {
         services.SQLConnector x = new services.SQLConnector();
         try {
-            if (!services.Api.login(userDetails.mobile, userDetails.otp)) {
+            if (!services.Api.login(mobile, otp)) {
                 throw new Exception("Invalid credentials!");
             }
 

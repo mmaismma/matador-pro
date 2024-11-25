@@ -139,7 +139,7 @@ public class SignInPage extends javax.swing.JFrame {
             } catch (Exception err) {
                 javax.swing.JOptionPane.showMessageDialog(null, "Error registering user!" + err);
             }
-        }, this));
+        }));
     }//GEN-LAST:event_getOTPButtonActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
