@@ -1,6 +1,6 @@
 package services;
 
-public class Register {
+class Register {
 
     static boolean register(lib.UserDetails userDetails) throws Exception {
         services.SQLConnector x = new services.SQLConnector();

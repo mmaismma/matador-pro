@@ -1,6 +1,6 @@
 package services;
 
-public class EditProfile {
+class EditProfile {
 
     static boolean editProfile(lib.UserDetails userDetails, String mobile, String otp) throws Exception {
         services.SQLConnector x = new services.SQLConnector();

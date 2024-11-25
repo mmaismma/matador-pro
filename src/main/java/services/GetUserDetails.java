@@ -1,6 +1,6 @@
 package services;
 
-public class GetUserDetails {
+class GetUserDetails {
 
     static lib.UserDetails getUserDetails(String mobile, String otp) throws Exception {
         services.SQLConnector x = new services.SQLConnector();

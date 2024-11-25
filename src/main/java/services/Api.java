@@ -17,4 +17,8 @@ public class Api {
     public static boolean editProfile(lib.UserDetails userDetails, String mobile, String otp) throws Exception {
         return EditProfile.editProfile(userDetails, mobile, otp);
     }
+
+    public static java.util.ArrayList<lib.BusDetails> searchBuses(String source, String dest) throws Exception {
+        return SearchBuses.searchBuses(source, dest);
+    }
 }

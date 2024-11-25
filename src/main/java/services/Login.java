@@ -1,6 +1,6 @@
 package services;
 
-public class Login {
+class Login {
 
     static boolean login(String mobile, String otp) throws Exception {
         services.SQLConnector x = new services.SQLConnector();
