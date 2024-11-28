@@ -1,11 +1,11 @@
 package services;
 
-class GetUserDetails {
+interface GetUserDetails {
 
-    static lib.UserDetails getUserDetails(String mobile, String otp) throws Exception {
+    default lib.UserDetails getUserDetails(String mobile, String otp) throws Exception {
         services.SQLConnector x = new services.SQLConnector();
         try {
-            if (!services.Api.login(mobile, otp)) {
+            if (!new services.Api().login(mobile, otp)) {
                 throw new Exception("Invalid credentials!");
             }
 

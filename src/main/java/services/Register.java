@@ -1,8 +1,8 @@
 package services;
 
-class Register {
+interface Register {
 
-    static boolean register(lib.UserDetails userDetails) throws Exception {
+    default boolean register(lib.UserDetails userDetails) throws Exception {
         services.SQLConnector x = new services.SQLConnector();
         try {
             java.sql.ResultSet existingMobile = x.conn

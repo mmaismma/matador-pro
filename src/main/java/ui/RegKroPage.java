@@ -215,7 +215,7 @@ public class RegKroPage extends javax.swing.JFrame {
         javax.swing.SwingUtilities.invokeLater(() -> new OTPVerfication(otp -> {
                     System.out.println(otp);
                     try {
-                        if (services.Api.register(new lib.UserDetails(
+                        if (new services.Api().register(new lib.UserDetails(
                                 mobileTF.getText(),
                                 firstNameTF.getText(),
                                 lastNameTF.getText(),
@@ -226,7 +226,7 @@ public class RegKroPage extends javax.swing.JFrame {
                                 ""
                         ))) {
                             javax.swing.JOptionPane.showMessageDialog(null, "User created successfully");
-                            app.State.userDetails = services.Api.getUserDetails(mobileTF.getText(), "" + otp);
+                            app.State.userDetails = new services.Api().getUserDetails(mobileTF.getText(), "" + otp);
                             this.dispose();
                             javax.swing.SwingUtilities.invokeLater(() -> new ProfilePage().setVisible(true));
                         } else {

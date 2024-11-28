@@ -1,8 +1,8 @@
 package services;
 
-class Login {
+interface Login {
 
-    static boolean login(String mobile, String otp) throws Exception {
+    default boolean login(String mobile, String otp) throws Exception {
         services.SQLConnector x = new services.SQLConnector();
 
         try {

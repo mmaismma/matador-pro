@@ -233,7 +233,7 @@ public class EditProfile extends javax.swing.JFrame {
                         app.State.userDetails.user_id
                 );
 
-                if (services.Api.editProfile(userDetails, app.State.userDetails.mobile, "" + otp)) {
+                if (new services.Api().editProfile(userDetails, app.State.userDetails.mobile, "" + otp)) {
                     javax.swing.JOptionPane.showMessageDialog(null, "Edit successful!");;
                     System.out.append("Edit success");
                     app.State.userDetails = userDetails;

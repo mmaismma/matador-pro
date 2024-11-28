@@ -128,9 +128,9 @@ public class SignInPage extends javax.swing.JFrame {
         javax.swing.SwingUtilities.invokeLater(() -> new OTPVerfication(otp -> {
             System.out.println(otp);
             try {
-                if (services.Api.login(this.mobileTF.getText(), "" + otp)) {
+                if (new services.Api().login(this.mobileTF.getText(), "" + otp)) {
                     javax.swing.JOptionPane.showMessageDialog(null, "Login successful!");;
-                    app.State.userDetails = services.Api.getUserDetails(this.mobileTF.getText(), "" + otp);
+                    app.State.userDetails = new services.Api().getUserDetails(this.mobileTF.getText(), "" + otp);
                     this.dispose();
                     javax.swing.SwingUtilities.invokeLater(() -> new ProfilePage().setVisible(true));;
                 } else {
