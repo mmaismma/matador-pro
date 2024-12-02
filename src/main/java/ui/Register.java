@@ -1,10 +1,10 @@
 package ui;
 
-public class RegKroPage extends javax.swing.JFrame {
+public class Register extends javax.swing.JFrame {
 
     private javax.swing.JFrame prevFrame;
 
-    public RegKroPage(javax.swing.JFrame prevFrame) {
+    public Register(javax.swing.JFrame prevFrame) {
         this.prevFrame = prevFrame;
         initComponents();
     }
@@ -215,7 +215,7 @@ public class RegKroPage extends javax.swing.JFrame {
         javax.swing.SwingUtilities.invokeLater(() -> new OTPVerfication(otp -> {
                     System.out.println(otp);
                     try {
-                        if (new services.Api().register(new lib.UserDetails(
+                        if (new services.Api().registerUser(new lib.UserDetails(
                                 mobileTF.getText(),
                                 firstNameTF.getText(),
                                 lastNameTF.getText(),
@@ -228,7 +228,7 @@ public class RegKroPage extends javax.swing.JFrame {
                             javax.swing.JOptionPane.showMessageDialog(null, "User created successfully");
                             app.State.userDetails = new services.Api().getUserDetails(mobileTF.getText(), "" + otp);
                             this.dispose();
-                            javax.swing.SwingUtilities.invokeLater(() -> new ProfilePage().setVisible(true));
+                            javax.swing.SwingUtilities.invokeLater(() -> new Dashboard().setVisible(true));
                         } else {
                             javax.swing.JOptionPane.showMessageDialog(null, "Error registering user!");
 

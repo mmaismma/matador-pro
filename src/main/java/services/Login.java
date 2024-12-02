@@ -2,22 +2,31 @@ package services;
 
 interface Login {
 
-    default boolean login(String mobile, String otp) throws Exception {
+    default void loginUser(String mobile, String otp) throws Exception {
         services.SQLConnector x = new services.SQLConnector();
 
-        try {
-            java.sql.ResultSet r = x.conn.createStatement()
-                    .executeQuery("SELECT * FROM users where mobile = '"
-                            + mobile + "' AND otp = '" + otp + "';");
-            if (r.next()) {
-                return true;
-            }
+        java.sql.ResultSet r = x.conn.createStatement()
+                .executeQuery("SELECT * FROM users where mobile = '"
+                        + mobile + "' AND otp = '" + otp + "';");
 
-            x.conn.close();
-        } catch (java.sql.SQLException err) {
-            throw new Exception(err);
+        x.conn.close();
+
+        if (!r.next()) {
+            throw new Exception("Invalid credentials");
         }
+    }
 
-        return false;
+    default void loginAgent(String mobile, String otp) throws Exception {
+        services.SQLConnector x = new services.SQLConnector();
+
+        java.sql.ResultSet r = x.conn.createStatement()
+                .executeQuery("SELECT * FROM agents where mobile = '"
+                        + mobile + "' AND otp = '" + otp + "';");
+
+        x.conn.close();
+
+        if (!r.next()) {
+            throw new Exception("Invalid credentials");
+        }
     }
 }

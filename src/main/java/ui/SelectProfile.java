@@ -152,7 +152,7 @@ public class SelectProfile extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBox2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        javax.swing.SwingUtilities.invokeLater(() -> new SignInPage(this).setVisible(true));
+        javax.swing.SwingUtilities.invokeLater(() -> new Login(this).setVisible(true));
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 

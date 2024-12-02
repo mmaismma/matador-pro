@@ -1,10 +1,10 @@
 package ui;
 
-public class SignInPage extends javax.swing.JFrame {
+public class Login extends javax.swing.JFrame {
 
     private javax.swing.JFrame prevFrame;
 
-    public SignInPage(javax.swing.JFrame prevFrame) {
+    public Login(javax.swing.JFrame prevFrame) {
         this.prevFrame = prevFrame;
         initComponents();
     }
@@ -128,12 +128,13 @@ public class SignInPage extends javax.swing.JFrame {
         javax.swing.SwingUtilities.invokeLater(() -> new OTPVerfication(otp -> {
             System.out.println(otp);
             try {
-                if (new services.Api().login(this.mobileTF.getText(), "" + otp)) {
+                try {
+                    new services.Api().loginUser(this.mobileTF.getText(), "" + otp);
                     javax.swing.JOptionPane.showMessageDialog(null, "Login successful!");;
                     app.State.userDetails = new services.Api().getUserDetails(this.mobileTF.getText(), "" + otp);
                     this.dispose();
-                    javax.swing.SwingUtilities.invokeLater(() -> new ProfilePage().setVisible(true));;
-                } else {
+                    javax.swing.SwingUtilities.invokeLater(() -> new Dashboard().setVisible(true));;
+                } catch (Exception err) {
                     javax.swing.JOptionPane.showMessageDialog(null, "Invalid credentials!");
                 }
             } catch (Exception err) {
@@ -143,7 +144,7 @@ public class SignInPage extends javax.swing.JFrame {
     }//GEN-LAST:event_getOTPButtonActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        javax.swing.SwingUtilities.invokeLater(() -> new RegKroPage(this).setVisible(true));
+        javax.swing.SwingUtilities.invokeLater(() -> new Register(this).setVisible(true));
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 

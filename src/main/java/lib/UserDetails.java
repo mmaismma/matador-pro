@@ -9,9 +9,9 @@ public class UserDetails {
     public String email;
     public String dob;
     public String otp;
-    public String user_id;
+    public String id;
 
-    public UserDetails(String mobile, String first_name, String last_name, String gender, String email, String dob, String otp, String user_id) {
+    public UserDetails(String mobile, String first_name, String last_name, String gender, String email, String dob, String otp, String id) {
         this.mobile = mobile;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -19,7 +19,7 @@ public class UserDetails {
         this.email = email;
         this.dob = dob;
         this.otp = otp;
-        this.user_id = user_id;
+        this.id = id;
     }
 
     public UserDetails() {

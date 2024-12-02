@@ -1,8 +1,8 @@
 package ui;
 
-public class LandingPage extends javax.swing.JFrame {
+public class Home extends javax.swing.JFrame {
 
-    public LandingPage() {
+    public Home() {
         initComponents();
 //        services.SQLConnector x = new services.SQLConnector();
 //        System.out.println(x.conn);

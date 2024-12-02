@@ -1,8 +1,8 @@
 package ui;
 
-public class ProfilePage extends javax.swing.JFrame {
+public class Dashboard extends javax.swing.JFrame {
 
-    public ProfilePage() {
+    public Dashboard() {
         initComponents();
         enterDetails();
     }
@@ -334,7 +334,7 @@ public class ProfilePage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        javax.swing.SwingUtilities.invokeLater(() -> new helpPage().setVisible(true));
+        javax.swing.SwingUtilities.invokeLater(() -> new Help().setVisible(true));
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -343,7 +343,7 @@ public class ProfilePage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        javax.swing.SwingUtilities.invokeLater(() -> new SearchingBus(this).setVisible(true));
+        javax.swing.SwingUtilities.invokeLater(() -> new SearchBus(this).setVisible(true));
         this.setVisible(false);
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -358,7 +358,7 @@ public class ProfilePage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        javax.swing.SwingUtilities.invokeLater(() -> new LandingPage().setVisible(true));
+        javax.swing.SwingUtilities.invokeLater(() -> new Home().setVisible(true));
         this.setVisible(false);
     }//GEN-LAST:event_jButton5ActionPerformed
 

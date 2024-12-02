@@ -1,8 +1,8 @@
 package ui;
 
-public class helpPage extends javax.swing.JFrame {
+public class Help extends javax.swing.JFrame {
 
-    public helpPage() {
+    public Help() {
         initComponents();
     }
 

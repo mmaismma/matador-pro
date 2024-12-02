@@ -1,22 +1,22 @@
 package services;
 
-interface EditProfile {
+public interface EditBusDetails {
 
-    default void editProfile(lib.UserDetails userDetails, String mobile, String otp) throws Exception {
+    default void editBusDetails(lib.BusDetails newBusDetails, lib.BusDetails oldBusDetails, lib.AgentDetails agent) throws Exception {
         services.SQLConnector x = new services.SQLConnector();
 
         try {
-            new services.Api().loginUser(mobile, otp);
+            new services.Api().loginAgent(agent.mobile, agent.otp);
         } catch (Exception err) {
             throw new Exception("Invalid credentials!");
         }
 
-        java.sql.ResultSet exists = x.conn
+        java.sql.ResultSet isExisting = x.conn
                 .createStatement()
-                .executeQuery("SELECT * FROM users WHERE user_id = '" + userDetails.id + "';");
+                .executeQuery("SELECT * FROM users WHERE user_id = '" + userDetails.user_id + "';");
 
-        if (!exists.next()) {
-            throw new Exception("User " + userDetails.id + " doesn't exist");
+        if (!isExisting.next()) {
+            throw new Exception("User " + userDetails.user_id + " doesn't exist");
         }
 
         x.conn
@@ -28,7 +28,7 @@ interface EditProfile {
                         + "gender = '" + userDetails.gender + "', "
                         + "email = '" + userDetails.email + "', "
                         + "dob = '" + userDetails.dob + "'"
-                        + "WHERE user_id = '" + userDetails.id + "'"
+                        + "WHERE user_id = '" + userDetails.user_id + "'"
                         + ";"
                 );
 

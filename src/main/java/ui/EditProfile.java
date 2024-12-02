@@ -218,7 +218,7 @@ public class EditProfile extends javax.swing.JFrame {
     }//GEN-LAST:event_dobTFActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-                    System.out.append("12");
+        System.out.append("12");
         javax.swing.SwingUtilities.invokeLater(() -> new OTPVerfication(otp -> {
             System.out.append("1235");
             try {
@@ -230,18 +230,17 @@ public class EditProfile extends javax.swing.JFrame {
                         emailTF.getText(),
                         dobTF.getText(),
                         "" + otp,
-                        app.State.userDetails.user_id
+                        app.State.userDetails.id
                 );
 
-                if (new services.Api().editProfile(userDetails, app.State.userDetails.mobile, "" + otp)) {
-                    javax.swing.JOptionPane.showMessageDialog(null, "Edit successful!");;
-                    System.out.append("Edit success");
+                try {
+                    new services.Api().editProfile(userDetails, app.State.userDetails.mobile, "" + otp);
+                    javax.swing.JOptionPane.showMessageDialog(null, "Edit successful!");
                     app.State.userDetails = userDetails;
                     this.dispose();
-                    javax.swing.SwingUtilities.invokeLater(() -> new ProfilePage().setVisible(true));;
-                } else {
+                    javax.swing.SwingUtilities.invokeLater(() -> new Dashboard().setVisible(true));;
+                } catch (Exception err) {
                     javax.swing.JOptionPane.showMessageDialog(null, "Invalid credentials!");
-                    System.out.append("Edit success");
                 }
             } catch (Exception err) {
                 javax.swing.JOptionPane.showMessageDialog(null, "Error editing user!" + err);
