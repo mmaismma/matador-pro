@@ -80,10 +80,10 @@ interface Register {
         x.conn
                 .createStatement()
                 .executeUpdate("INSERT INTO agents VALUES ("
-                        + "'" + agentDetails.mobile + "', "
                         + "'" + agentDetails.first_name + "', "
                         + "'" + agentDetails.last_name + "', "
                         + "'" + agentDetails.aadhar + "', "
+                        + "'" + agentDetails.mobile + "', "
                         + "'" + agentDetails.email + "', "
                         + "'" + agentDetails.otp + "', "
                         + "'" + agentDetails.id + "'"

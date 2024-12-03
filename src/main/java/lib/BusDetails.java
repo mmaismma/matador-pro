@@ -1,12 +1,14 @@
 package lib;
 
 public class BusDetails {
-    public String id;
-    public String[] stops;
+    public String name;
+    public String number;
+    public String agent;
 
-    public BusDetails(String id, String[] stops, int price) {
-        this.id = id;
-        this.stops = stops;
+    public BusDetails(String name, String number, String agent) {
+        this.name = name;
+        this.number = number;
+        this.agent = agent;
     }
 
     public BusDetails() {

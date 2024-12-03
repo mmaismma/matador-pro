@@ -17,6 +17,7 @@ interface Login {
     }
 
     default void loginAgent(String mobile, String otp) throws Exception {
+        System.out.println(mobile + otp);
         services.SQLConnector x = new services.SQLConnector();
 
         java.sql.ResultSet r = x.conn.createStatement()
