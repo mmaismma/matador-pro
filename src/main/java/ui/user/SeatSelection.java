@@ -11,8 +11,7 @@ public class SeatSelection extends javax.swing.JFrame {
         this.standingFare = standingFare;
         this.sittingFare = sittingFare;
 
-        seatCB.addItem("Standing");
-        seatCB.addItem("Sitting");
+        this.setVisible(true);
         initComponents();
     }
 
@@ -58,6 +57,8 @@ public class SeatSelection extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        seatCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "standing", "sitting" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

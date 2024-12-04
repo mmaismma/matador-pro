@@ -55,7 +55,7 @@ public class Register extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 0, 0, 80));
 
         getOTPButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        getOTPButton1.setText("GET OTP →");
+        getOTPButton1.setText("CREATE PIN →");
         getOTPButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 getOTPButton1ActionPerformed(evt);
@@ -249,7 +249,7 @@ public class Register extends javax.swing.JFrame {
         mobileTF.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
 
         getOTPButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        getOTPButton.setText("GET OTP →");
+        getOTPButton.setText("CREATE PIN →");
         getOTPButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 getOTPButtonActionPerformed(evt);
@@ -365,7 +365,7 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void getOTPButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getOTPButtonActionPerformed
-        javax.swing.SwingUtilities.invokeLater(() -> new OTPVerfication(otp -> {
+        javax.swing.SwingUtilities.invokeLater(() -> new PINVerfication(otp -> {
             System.out.println(otp);
             try {
                 if (new services.Api().registerUser(new lib.UserDetails(
@@ -402,7 +402,7 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_firstNameTFActionPerformed
 
     private void getOTPButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getOTPButton1ActionPerformed
-        javax.swing.SwingUtilities.invokeLater(() -> new OTPVerfication(otp -> {
+        javax.swing.SwingUtilities.invokeLater(() -> new PINVerfication(otp -> {
             System.out.println(otp);
             try {
                 if (new services.Api().registerAgent(new lib.AgentDetails(

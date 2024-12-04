@@ -60,7 +60,7 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setText(" Mobile Number :");
 
         getOTPButton.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        getOTPButton.setText("GET OTP");
+        getOTPButton.setText("ENTER PIN");
         getOTPButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 getOTPButtonActionPerformed(evt);
@@ -138,7 +138,7 @@ public class Login extends javax.swing.JFrame {
         jLabel8.setText(" Mobile Number :");
 
         getOTPButton1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        getOTPButton1.setText("GET OTP");
+        getOTPButton1.setText("ENTER PIN");
         getOTPButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 getOTPButton1ActionPerformed(evt);
@@ -213,7 +213,7 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void getOTPButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getOTPButtonActionPerformed
-        javax.swing.SwingUtilities.invokeLater(() -> new OTPVerfication(otp -> {
+        javax.swing.SwingUtilities.invokeLater(() -> new PINVerfication(otp -> {
             System.out.println(otp);
             try {
                 try {
@@ -242,7 +242,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void getOTPButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getOTPButton1ActionPerformed
-        javax.swing.SwingUtilities.invokeLater(() -> new OTPVerfication(otp -> {
+        javax.swing.SwingUtilities.invokeLater(() -> new PINVerfication(otp -> {
             System.out.println(otp);
             try {
                 try {

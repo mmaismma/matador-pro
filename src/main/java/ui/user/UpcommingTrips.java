@@ -12,10 +12,13 @@ public class UpcommingTrips extends javax.swing.JFrame {
 
         try {
             TicketDetails[] ticketsByUserId = new services.Api().getTicketsByUserId(app.State.userDetails.id);
+            System.out.println(ticketsByUserId.length);
             for (TicketDetails x : ticketsByUserId) {
+                System.out.println(x.fromStop);
                 ticketListPanel.add(new TicketSummaryPanel(x));
             }
         } catch (Exception err) {
+            err.printStackTrace();
             javax.swing.JOptionPane.showMessageDialog(null, "Error authorizing user!");
 
         }
@@ -44,17 +47,7 @@ public class UpcommingTrips extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout ticketListPanelLayout = new javax.swing.GroupLayout(ticketListPanel);
-        ticketListPanel.setLayout(ticketListPanelLayout);
-        ticketListPanelLayout.setHorizontalGroup(
-            ticketListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 890, Short.MAX_VALUE)
-        );
-        ticketListPanelLayout.setVerticalGroup(
-            ticketListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 290, Short.MAX_VALUE)
-        );
-
+        ticketListPanel.setLayout(new javax.swing.BoxLayout(ticketListPanel, javax.swing.BoxLayout.PAGE_AXIS));
         getContentPane().add(ticketListPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 890, 290));
 
         jPanel4.setBackground(new java.awt.Color(0, 0, 0,80));

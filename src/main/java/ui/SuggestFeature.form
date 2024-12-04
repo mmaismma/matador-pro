@@ -169,7 +169,8 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Any Complaints? You Can Register It Here."/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Suggest a feature"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton2">

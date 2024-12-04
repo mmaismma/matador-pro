@@ -1,10 +1,10 @@
 package ui;
 
-public class OTPVerfication extends javax.swing.JFrame {
+public class PINVerfication extends javax.swing.JFrame {
 
     java.util.function.Consumer<Integer> callback;
 
-    public OTPVerfication(java.util.function.Consumer<Integer> callback) {
+    public PINVerfication(java.util.function.Consumer<Integer> callback) {
         this.callback = callback;
         this.setVisible(true);
         initComponents();
@@ -44,13 +44,13 @@ public class OTPVerfication extends javax.swing.JFrame {
         jLabel2.setText("   MATADOR - PRO");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Emoji", 1, 20)); // NOI18N
-        jLabel3.setText(" OTP Verification");
+        jLabel3.setText(" PIN Verification");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setText("Enter OTP :");
+        jLabel4.setText("Enter PIN :");
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        jButton1.setText("Verify OTP");
+        jButton1.setText("Submit PIN");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

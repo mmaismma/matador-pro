@@ -17,7 +17,6 @@ public class TicketSummaryPanel extends javax.swing.JPanel {
         sourceLB = new javax.swing.JLabel();
         destLB = new javax.swing.JLabel();
         seatTypeLB = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         busNumLB.setText(this.ticketDetails.busNumber);
@@ -27,8 +26,6 @@ public class TicketSummaryPanel extends javax.swing.JPanel {
         destLB.setText(this.ticketDetails.toStop);
 
         seatTypeLB.setText(this.ticketDetails.seatType);
-
-        jButton1.setText("Cancel Trip");
 
         jButton2.setText("View Ticket");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -50,9 +47,7 @@ public class TicketSummaryPanel extends javax.swing.JPanel {
                 .addComponent(destLB)
                 .addGap(114, 114, 114)
                 .addComponent(seatTypeLB)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addContainerGap())
         );
@@ -65,7 +60,6 @@ public class TicketSummaryPanel extends javax.swing.JPanel {
                     .addComponent(sourceLB)
                     .addComponent(destLB)
                     .addComponent(seatTypeLB)
-                    .addComponent(jButton1)
                     .addComponent(jButton2))
                 .addContainerGap(10, Short.MAX_VALUE))
         );
@@ -73,14 +67,12 @@ public class TicketSummaryPanel extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         javax.swing.SwingUtilities.invokeLater(() -> new TicketView(this.ticketDetails).setVisible(true));
-
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel busNumLB;
     private javax.swing.JLabel destLB;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel seatTypeLB;
     private javax.swing.JLabel sourceLB;
