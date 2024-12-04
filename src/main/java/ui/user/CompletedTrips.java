@@ -1,4 +1,4 @@
-package ui;
+package ui.user;
 
 public class CompletedTrips extends javax.swing.JFrame {
 

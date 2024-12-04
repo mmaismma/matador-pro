@@ -54,7 +54,7 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setText("   MATADOR - PRO");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Emoji", 1, 18)); // NOI18N
-        jLabel3.setText("    SIGN IN");
+        jLabel3.setText("USER LOGIN");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText(" Mobile Number :");
@@ -100,7 +100,7 @@ public class Login extends javax.swing.JFrame {
                                 .addComponent(mobileTF, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(20, 20, 20))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel3)
                         .addGap(138, 138, 138))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -132,7 +132,7 @@ public class Login extends javax.swing.JFrame {
         jLabel6.setText("   MATADOR - PRO");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Emoji", 1, 18)); // NOI18N
-        jLabel7.setText("    SIGN IN");
+        jLabel7.setText("AGENT LOGIN");
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setText(" Mobile Number :");
@@ -178,7 +178,7 @@ public class Login extends javax.swing.JFrame {
                                 .addComponent(mobileTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(20, 20, 20))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel7)
                         .addGap(138, 138, 138))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -221,7 +221,7 @@ public class Login extends javax.swing.JFrame {
                     javax.swing.JOptionPane.showMessageDialog(null, "Login successful!");;
                     app.State.userDetails = new services.Api().getUserDetails(this.mobileTF.getText(), "" + otp);
                     this.dispose();
-                    javax.swing.SwingUtilities.invokeLater(() -> new Dashboard().setVisible(true));;
+                    javax.swing.SwingUtilities.invokeLater(() -> new ui.user.Dashboard().setVisible(true));;
                 } catch (Exception err) {
                     javax.swing.JOptionPane.showMessageDialog(null, "Invalid credentials!");
                 }
@@ -250,7 +250,7 @@ public class Login extends javax.swing.JFrame {
                     javax.swing.JOptionPane.showMessageDialog(null, "Login successful!");;
                     app.State.agentDetails = new services.Api().getAgentDetails(this.mobileTF1.getText(), "" + otp);
                     this.dispose();
-                    javax.swing.SwingUtilities.invokeLater(() -> new Dashboard().setVisible(true));;
+                    javax.swing.SwingUtilities.invokeLater(() -> new ui.agent.Dashboard().setVisible(true));;
                 } catch (Exception err) {
                     javax.swing.JOptionPane.showMessageDialog(null, "Invalid credentials!");
                 }

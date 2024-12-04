@@ -1,18 +1,20 @@
-package ui;
+package ui.agent;
 
-public class AgentDashboard extends javax.swing.JFrame {
+import ui.Help;
+import ui.Home;
 
-    public AgentDashboard() {
+public class Dashboard extends javax.swing.JFrame {
+
+    public Dashboard() {
         initComponents();
         enterDetails();
     }
 
     private void enterDetails() {
-        nameLB.setText(app.State.agentDetails.first_name + " " + app.State.userDetails.last_name);
+        nameLB.setText(app.State.agentDetails.first_name + " " + app.State.agentDetails.last_name);
         mobileLB.setText(app.State.agentDetails.mobile);
-        genderLB.setText(app.State.userDetails.gender);
-        dobLB.setText(app.State.userDetails.dob);
-        emailLB.setText(app.State.userDetails.email);
+        aadharLB.setText(app.State.agentDetails.aadhar);
+        emailLB.setText(app.State.agentDetails.email);
     }
 
     @SuppressWarnings("unchecked")
@@ -22,10 +24,8 @@ public class AgentDashboard extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         nameLB = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        dobLB = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        genderLB = new javax.swing.JLabel();
+        aadharLB = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -34,10 +34,8 @@ public class AgentDashboard extends javax.swing.JFrame {
         mobileLB = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -60,23 +58,14 @@ public class AgentDashboard extends javax.swing.JFrame {
         nameLB.setForeground(new java.awt.Color(255, 255, 255));
         nameLB.setText("....................");
 
-        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel6.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("DATE OF BIRTH");
-
-        dobLB.setBackground(new java.awt.Color(255, 255, 255));
-        dobLB.setForeground(new java.awt.Color(255, 255, 255));
-        dobLB.setText("....................");
-
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText(" GENDER");
+        jLabel8.setText("Aadhar");
 
-        genderLB.setBackground(new java.awt.Color(255, 255, 255));
-        genderLB.setForeground(new java.awt.Color(255, 255, 255));
-        genderLB.setText("....................");
+        aadharLB.setBackground(new java.awt.Color(255, 255, 255));
+        aadharLB.setForeground(new java.awt.Color(255, 255, 255));
+        aadharLB.setText("....................");
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
@@ -130,16 +119,12 @@ public class AgentDashboard extends javax.swing.JFrame {
                             .addComponent(nameLB, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(emailLB, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE))
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(39, 39, 39)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(dobLB, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
-                            .addComponent(mobileLB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(mobileLB, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(23, 23, 23))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(genderLB, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(aadharLB, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -156,13 +141,11 @@ public class AgentDashboard extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nameLB)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dobLB))
+                    .addComponent(nameLB))
                 .addGap(59, 59, 59)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(genderLB))
+                    .addComponent(aadharLB))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addComponent(jLabel11)
                 .addGap(37, 37, 37)
@@ -181,15 +164,7 @@ public class AgentDashboard extends javax.swing.JFrame {
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 2, 40)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText(" User Profile");
-
-        jButton6.setFont(new java.awt.Font("Segoe Script", 1, 14)); // NOI18N
-        jButton6.setText("Edit");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
+        jLabel3.setText(" Agent Profile");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -197,10 +172,8 @@ public class AgentDashboard extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(234, 234, 234)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 183, Short.MAX_VALUE)
-                .addComponent(jButton6)
-                .addGap(16, 16, 16))
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(220, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -208,10 +181,6 @@ public class AgentDashboard extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(39, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton6)
-                .addGap(15, 15, 15))
         );
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 740, 120));
@@ -219,18 +188,10 @@ public class AgentDashboard extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 0, 0,100));
 
         jButton2.setFont(new java.awt.Font("Segoe Script", 0, 12)); // NOI18N
-        jButton2.setText("UPCOMMING TRIPS");
+        jButton2.setText("SEE BUSES");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setFont(new java.awt.Font("Segoe Script", 0, 12)); // NOI18N
-        jButton3.setText("COMPLETED TRIPS");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
             }
         });
 
@@ -243,7 +204,7 @@ public class AgentDashboard extends javax.swing.JFrame {
         });
 
         jButton7.setFont(new java.awt.Font("Segoe Script", 0, 12)); // NOI18N
-        jButton7.setText("BOOK A TRIP");
+        jButton7.setText("ADD BUS");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
@@ -262,7 +223,6 @@ public class AgentDashboard extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(26, Short.MAX_VALUE))
@@ -274,9 +234,7 @@ public class AgentDashboard extends javax.swing.JFrame {
                 .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(78, 78, 78)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39))
         );
@@ -337,23 +295,13 @@ public class AgentDashboard extends javax.swing.JFrame {
         javax.swing.SwingUtilities.invokeLater(() -> new Help().setVisible(true));
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        javax.swing.SwingUtilities.invokeLater(() -> new CompletedTrips(this).setVisible(true));
-        this.setVisible(false);
-    }//GEN-LAST:event_jButton3ActionPerformed
-
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        javax.swing.SwingUtilities.invokeLater(() -> new SearchBus(this).setVisible(true));
+        javax.swing.SwingUtilities.invokeLater(() -> new ui.agent.AddBus(this).setVisible(true));
         this.setVisible(false);
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        javax.swing.SwingUtilities.invokeLater(() -> new EditProfile(this).setVisible(true));
-        this.setVisible(false);
-    }//GEN-LAST:event_jButton6ActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        javax.swing.SwingUtilities.invokeLater(() -> new UpcommingTrips(this).setVisible(true));
+        javax.swing.SwingUtilities.invokeLater(() -> new SeeBuses(this).setVisible(true));
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -363,14 +311,11 @@ public class AgentDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel dobLB;
+    private javax.swing.JLabel aadharLB;
     private javax.swing.JLabel emailLB;
-    private javax.swing.JLabel genderLB;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -380,7 +325,6 @@ public class AgentDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

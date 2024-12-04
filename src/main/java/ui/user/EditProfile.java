@@ -1,4 +1,6 @@
-package ui;
+package ui.user;
+
+import ui.OTPVerfication;
 
 public class EditProfile extends javax.swing.JFrame {
 

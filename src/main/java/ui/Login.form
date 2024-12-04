@@ -97,7 +97,7 @@
                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel3" min="-2" pref="97" max="-2" attributes="0"/>
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -142,7 +142,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Emoji" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="    SIGN IN"/>
+                <Property name="text" type="java.lang.String" value="USER LOGIN"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
@@ -228,7 +228,7 @@
                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel7" min="-2" pref="97" max="-2" attributes="0"/>
+                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -273,7 +273,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Emoji" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="    SIGN IN"/>
+                <Property name="text" type="java.lang.String" value="AGENT LOGIN"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel8">

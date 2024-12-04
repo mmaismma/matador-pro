@@ -9,11 +9,10 @@ interface Login {
                 .executeQuery("SELECT * FROM users where mobile = '"
                         + mobile + "' AND otp = '" + otp + "';");
 
-        x.conn.close();
-
         if (!r.next()) {
             throw new Exception("Invalid credentials");
         }
+        x.conn.close();
     }
 
     default void loginAgent(String mobile, String otp) throws Exception {
@@ -24,10 +23,9 @@ interface Login {
                 .executeQuery("SELECT * FROM agents where mobile = '"
                         + mobile + "' AND otp = '" + otp + "';");
 
-        x.conn.close();
-
         if (!r.next()) {
             throw new Exception("Invalid credentials");
         }
+        x.conn.close();
     }
 }

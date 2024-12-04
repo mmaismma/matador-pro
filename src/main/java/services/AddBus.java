@@ -1,6 +1,6 @@
 package services;
 
-public interface AddBus {
+interface AddBus {
 
     default void addBus(lib.BusDetails busDetails, lib.AgentDetails agent) throws Exception {
 
@@ -24,7 +24,9 @@ public interface AddBus {
                 .executeUpdate("INSERT INTO buses VALUES ("
                         + "'" + busDetails.name + "', "
                         + "'" + busDetails.number + "', "
-                        + "'" + busDetails.agent + "' "
+                        + "'" + busDetails.agent + "', "
+                        + "'" + busDetails.standingFare + "', "
+                        + "'" + busDetails.sittingFare + "' "
                         + ");"
                 );
 

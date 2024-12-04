@@ -4,5 +4,13 @@ public class Api implements
         Register,
         Login,
         GetUserDetails,
-        EditProfile {
+        EditProfile,
+        AddBus,
+        AddSchedule,
+        AddStop,
+        SeeBuses,
+        SearchBuses,
+        BookTicket,
+        GetTickets,
+        FetchStops {
 }

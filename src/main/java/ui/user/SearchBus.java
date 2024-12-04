@@ -1,7 +1,10 @@
-package ui;
-import java.util.Date;
-import javax.swing.JOptionPane;
+package ui.user;
 
+import java.util.Date;
+import javax.swing.JFrame;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import lib.StopDetails;
 
 public class SearchBus extends javax.swing.JFrame {
 
@@ -10,6 +13,15 @@ public class SearchBus extends javax.swing.JFrame {
     public SearchBus(javax.swing.JFrame prevFrame) {
         this.prevFrame = prevFrame;
         initComponents();
+        try {
+            StopDetails[] fetchAllStops = new services.Api().fetchAllStops();
+            for (StopDetails x : fetchAllStops) {
+                sourceCB.addItem(x.stopName);
+                destCB.addItem(x.stopName);
+            }
+        } catch (Exception err) {
+            javax.swing.JOptionPane.showMessageDialog(null, "Error fetching stops!" + err);
+        }
         jDateChooser1.setMinSelectableDate(new Date()); // sets today as minimum selectable date
         initComboBoxes();
     }
@@ -24,8 +36,8 @@ public class SearchBus extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        sourceCB = new javax.swing.JComboBox<>();
+        destCB = new javax.swing.JComboBox<>();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -62,10 +74,6 @@ public class SearchBus extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         jDateChooser1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
                 jDateChooser1PropertyChange(evt);
@@ -88,11 +96,11 @@ public class SearchBus extends javax.swing.JFrame {
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(87, 87, 87))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(sourceCB, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(destCB, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(54, 54, 54))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -113,10 +121,10 @@ public class SearchBus extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addGap(3, 3, 3)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
+                            .addComponent(sourceCB, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addGap(1, 1, 1)
-                            .addComponent(jComboBox2))
+                            .addComponent(destCB))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -178,14 +186,14 @@ public class SearchBus extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Date selectedDate = jDateChooser1.getDate();
         if (selectedDate == null) {
-        javax.swing.JOptionPane.showMessageDialog(this, 
-            "Please select a valid date.",
-            "Date Selection Error",
-            javax.swing.JOptionPane.ERROR_MESSAGE);
-        return; // Do not proceed if no date is selected
-    }
-        
-        javax.swing.SwingUtilities.invokeLater(() -> new AvailableBuses().setVisible(true));
+            javax.swing.JOptionPane.showMessageDialog(this,
+                    "Please select a valid date.",
+                    "Date Selection Error",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
+            return; // Do not proceed if no date is selected
+        }
+
+        javax.swing.SwingUtilities.invokeLater(() -> new AvailableBuses(sourceCB.getSelectedItem().toString(), destCB.getSelectedItem().toString(), "", this).setVisible(true));
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -196,66 +204,71 @@ public class SearchBus extends javax.swing.JFrame {
 
     private void jDateChooser1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDateChooser1PropertyChange
         if ("date".equals(evt.getPropertyName())) {
-        Date selectedDate = jDateChooser1.getDate();
-        
-        if (selectedDate != null) {
-            // Perform your logic with the selected date
-            System.out.println("Selected Date: " + selectedDate);
-        } else {
-            // If the date field is cleared or invalid
-            System.out.println("No date selected.");
+            Date selectedDate = jDateChooser1.getDate();
+
+            if (selectedDate != null) {
+                // Perform your logic with the selected date
+                System.out.println("Selected Date: " + selectedDate);
+            } else {
+                // If the date field is cleared or invalid
+                System.out.println("No date selected.");
+            }
         }
-     }
     }//GEN-LAST:event_jDateChooser1PropertyChange
-    
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {
         validateDropdownSelection();
-    }                                        
-    
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    }
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {
         validateDropdownSelection();
-    }                                        
+    }
 
     private void validateDropdownSelection() {
-        String fromSelection = (String) jComboBox1.getSelectedItem();
-        String toSelection = (String) jComboBox2.getSelectedItem();
-
-    if (fromSelection != null && toSelection != null && fromSelection.equals(toSelection)) {
-        // Show error message
-        JOptionPane.showMessageDialog(this, 
-            "Source and destination cannot be the same. Please select different locations.", 
-            "Validation Error", 
-        JOptionPane.ERROR_MESSAGE);
-
-        // Reset one of the dropdowns, e.g., set destination to null
-        jComboBox2.setSelectedIndex(-1); // Clear destination dropdown
-     }
+//        String fromSelection = (String) sourceCB.getSelectedItem();
+//        String toSelection = (String) destCB.getSelectedItem();
+//
+//    if (fromSelection != null && toSelection != null && fromSelection.equals(toSelection)) {
+//        // Show error message
+//        JOptionPane.showMessageDialog(this,
+//            "Source and destination cannot be the same. Please select different locations.",
+//            "Validation Error",
+//        JOptionPane.ERROR_MESSAGE);
+//
+//        // Reset one of the dropdowns, e.g., set destination to null
+//        destCB.setSelectedIndex(-1); // Clear destination dropdown
+//     }
     }
-        private void initComboBoxes() {
-        String[] loc1 = {"Katra", "Painthal", "SMVDU Naryana", "Dheerti", "Domail"};
-        String[] loc2 = new String[loc1.length]; 
-        for (int i = 0; i < loc1.length; i++) {
-            loc2[i] = loc1[loc1.length - 1 - i];
+
+    private void initComboBoxes() {
+//        String[] loc1 = {"Katra", "Painthal", "SMVDU Naryana", "Dheerti", "Domail"};
+//        String[] loc2 = new String[loc1.length];
+//        for (int i = 0; i < loc1.length; i++) {
+//            loc2[i] = loc1[loc1.length - 1 - i];
+//        }
+//
+//        // Set dropdown options
+//        sourceCB.setModel(new javax.swing.DefaultComboBoxModel<>(loc1));
+//            destCB.setModel(new javax.swing.DefaultComboBoxModel<>(loc2));
+//
+//        // Attach listeners
+//        sourceCB.addActionListener(this::jComboBox1ActionPerformed);
+//            destCB.addActionListener(this::jComboBox2ActionPerformed);
+    }
+
+    public static void main(String[] args) {
+        try {
+            UIManager.setLookAndFeel(new com.formdev.flatlaf.FlatLightLaf());
+        } catch (UnsupportedLookAndFeelException ex) {
+            System.err.println("Failed to initialize FlatLaf");
         }
-
-        // Set dropdown options
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(loc1));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(loc2));
-
-        // Attach listeners
-        jComboBox1.addActionListener(this::jComboBox1ActionPerformed);
-        jComboBox2.addActionListener(this::jComboBox2ActionPerformed);
+        javax.swing.SwingUtilities.invokeLater(() -> new SearchBus(new JFrame()).setVisible(true));
     }
 
-    
-    
-    
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
+    private javax.swing.JComboBox<String> destCB;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -265,5 +278,6 @@ public class SearchBus extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JComboBox<String> sourceCB;
     // End of variables declaration//GEN-END:variables
 }
