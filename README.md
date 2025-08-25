@@ -1,64 +1,72 @@
-Matador Pro – Mini-Bus Seat Booking Application
+🚌 Matador Pro – Mini-Bus Seat Booking Application
 
-Matador Pro is a desktop application built with Java Swing that enables efficient mini-bus seat booking. It delivers a user-friendly interface for selecting seats, booking tickets, and managing reservations—all within a lightweight and intuitive GUI.
+Matador Pro is a Java Swing desktop application for mini-bus seat booking. It provides a clean and interactive interface for selecting seats, booking tickets, and managing reservations with ease.
 
-Features
+✨ Features
 
-Seat Selection Interface: Visual seating layout allowing users to choose available seats.
+✅ Seat Selection Interface – Visual seat layout with availability status
+✅ Booking Management – Reserve, confirm, and track seats instantly
+✅ Database Integration – Store booking details securely (db_backup.sql included)
+✅ User-Friendly GUI – Built with Java Swing for a lightweight desktop experience
 
-Booking Management: Users can reserve seats and receive immediate booking confirmation.
+📂 Project Structure
+matador-pro/
+├── src/main/           # Java source code (GUI + business logic)
+├── db_backup.sql       # SQL schema and sample data
+├── pom.xml             # Maven project configuration
+├── LICENSE             # GPL-3.0 license
+└── README.md           # Project documentation
 
-Database Integration: Stores booking details using a local database (SQL-based backup included).
+🛠️ Tech Stack
+Category	Tools & Frameworks
+💻 Language	Java
+🎨 GUI Framework	Swing (Java Swing Toolkit)
+⚙️ Build Tool	Maven
+🗄 Database	SQL (db_backup.sql provided)
+📜 License	GNU GPL-3.0
+🚀 Getting Started
 
-Simple & Clean UI: Built entirely with Java Swing for a responsive and familiar desktop experience.
-
-Demo & License
-
-Live Demo: Available at the [hosted app link]
-GitHub
-.
-
-License: Distributed under the GNU GPL-3.0 License, ensuring it remains free and open-source. 
-GitHub
-
-Installation & Setup
-
-Clone the repository
+Clone the Repository
 
 git clone https://github.com/mmaismma/matador-pro.git
 
 
-Import into your IDE (e.g., IntelliJ IDEA, Eclipse) via the existing pom.xml (Maven configuration).
+Open in IDE
 
-Setup the database: Use the included db_backup.sql file to create the required database and tables.
+Import into IntelliJ IDEA / Eclipse
 
-Run the application: Launch via your IDE or use Maven to build and execute.
+Load using Maven (pom.xml)
 
-Project Structure
-matador-pro/
-├── src/main/              # Java source code (Swing GUI, business logic)
-├── db_backup.sql          # SQL schema/data backup
-├── pom.xml                # Maven project configuration
-├── LICENSE                # GPL-3.0 license
-└── README.md              # Project documentation
+Setup Database
 
-Technologies
-Category	Tools & Frameworks
-Language	Java
-GUI Framework	Swing (Java Swing toolkit)
-Build Tool	Maven
-Database	SQL (schema provided in db_backup.sql)
-License	GNU GPL-3.0
-Contribution
+Import db_backup.sql into your SQL server
 
-Contributions are welcome! If you'd like to enhance features such as seat layout design, add export functionality, or improve reservation flow:
+Run the App
 
-Fork the repository
+Launch via IDE or build with Maven
 
-Create a descriptive branch
+Start booking your seats 🎉
 
-Submit a pull request—let's build this together!
+🎮 Demo Screenshots
 
-Contact
+(Add screenshots/GIFs here when available)
 
-For suggestions or feedback, please open an issue in the repository or reach out to the contributors listed on GitHub.
+![Seat Booking UI](images/screenshot1.png)
+![Booking Confirmation](images/screenshot2.png)
+
+🤝 Contributing
+
+Contributions are welcome! 🚀
+
+🍴 Fork the repo
+
+🌿 Create a new branch
+
+🔧 Make improvements (UI, DB, features)
+
+📩 Submit a Pull Request
+
+📜 License
+
+This project is licensed under the GNU GPL-3.0 License.
+You are free to use, modify, and distribute with proper attribution.
